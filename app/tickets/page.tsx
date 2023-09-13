@@ -2,30 +2,28 @@ import {Card, Grid, Tab, TabGroup, TabList, TabPanel, TabPanels, Text, Title} fr
 import { Select, SelectItem } from "@tremor/react";
 import axios from "axios";
 
-export async function getServerSideProps() {
-    try {
-        // Fetch data from JSONPlaceholder on the server side
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts').then(res => {
-            console.log(res)
-        });
-
-
-        return {
-            props: {
-                posts: response,
-            },
-        };
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return {
-            props: {
-                posts: [],
-            },
-        };
-    }
-}
+// export async function getServerSideProps() {
+//     try {
+//         // Fetch data from JSONPlaceholder on the server side
+//         const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+//
+//         return {
+//             props: {
+//                 posts: await response.json(),
+//             },
+//         };
+//     } catch (error) {
+//         console.error('Error fetching data:', error);
+//         return {
+//             props: {
+//                 posts: [],
+//             },
+//         };
+//     }
+// }
 // @ts-ignore
-export default function TicketPage({posts}){
+export default function TicketPage(){
+
     return (
             <main className="flex min-h-screen flex-col items-center justify-between p-24">
 
@@ -33,12 +31,7 @@ export default function TicketPage({posts}){
                 <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</Text>
                 <div className="max-w-sm mx-auto space-y-6 mt-6">
                     <Select>
-                        {posts &&
-                            posts.map((post: any) => (
-                                <SelectItem key={post.id} value={post.title}>
-                                    {post.title}
-                                </SelectItem>
-                            ))}
+
                     </Select>
                 </div>
                 <TabGroup className="mt-6">
