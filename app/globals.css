@@ -16,6 +16,12 @@
   }
 }
 
+.qr-code-scanner-container {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 400px; /* Set a maximum width to limit expansion */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
