@@ -10,7 +10,7 @@ export default async function TicketPage() {
 
             <Title>Event Dashboard</Title>
             <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</Text>
-            <TicketTable events={events}/>
+            <TicketTable  events={events}/>
         </main>
     );
 }
