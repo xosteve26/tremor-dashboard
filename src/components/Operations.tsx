@@ -5,7 +5,7 @@ import Image from 'next/image'
 import QrCodeScanner from "@/src/components/QrScanner";
 import Link from "next/link"; // Adjust the import path as needed
 
-export default function ScannerComponent() {
+export default function Operations() {
     const [isScanning, setIsScanning] = useState(false);
 
 

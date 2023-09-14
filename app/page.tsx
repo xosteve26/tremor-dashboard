@@ -1,4 +1,4 @@
-import ScannerComponent from "@/src/components/Operations";
+import Operations from "@/src/components/Operations";
 
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div>
-     <ScannerComponent />
+     <Operations />
     </div>
   )
 }
