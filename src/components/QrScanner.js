@@ -10,9 +10,10 @@ export default function QrCodeScanner(props){
     const successAudioRef = useRef(null);
     const errorAudioRef = useRef(null);
     const handleScan = (data) => {
-        if (data) {
+        console.log("DATA: ",data)
+        if (data && data.text) {
             setResult(data.text);
-            sendQRDataToServer(data); // Send the scanned data to the server
+            sendQRDataToServer(data.text)
           // Turn off the scanner after a successful scan
         }
     };
@@ -23,22 +24,25 @@ export default function QrCodeScanner(props){
 
     const sendQRDataToServer = async (data) => {
         try {
-            const response = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
-            if (response.status === 200) {
-                // Successful response
-                // Play the success sound
+            console.log("QR DATA: ",data)
+            const splitData = data.split("|")
+            const email = splitData[0]
+            const eventId = splitData[1]
+            const day = splitData[2]
+
+            const response = await axios.post(`https://alpha.theesports.club/event/ticket/checkin/${eventId}`, {
+                email:email,
+                day: day
+            });
+            if (response.data.statusCode === 200) {
                 successAudioRef.current.play();
                 console.log(response.data)
-
-                // Reset component state for the next scan
                 setResult("");
             } else {
                 console.log("ERROR")
-                // Handle unsuccessful response if needed
                 errorAudioRef.current.play()
             }
         } catch (error) {
-            // Handle Axios request error
             console.error("Axios error:", error);
         }
     };
@@ -54,7 +58,7 @@ export default function QrCodeScanner(props){
                 delay={300}
                 onError={handleError}
                 onResult={handleScan}
-                style={{ width: "50%" }}
+                style={{ width: "75%" }}
                 constraints={{ facingMode: "environment" }} />
         }
             <audio ref={successAudioRef} src="/sounds/success.wav" autoPlay></audio>
