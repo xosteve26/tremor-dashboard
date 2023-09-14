@@ -35,7 +35,7 @@ export default function QrCodeScanner(props){
                 day: day
             },{
                 headers:
-                    {Authorization: "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjE2R2JOSjFwOWxrbUVEd3ZLRWxUeHliTlpNZyJ9.eyJhdWQiOiI4ODUxZTRiMC0wZGQwLTQ0NzUtODZhMy00NDQ5ZWJiMzU2NzgiLCJleHAiOjE2OTUyODMwMDMsImlhdCI6MTY5NDY3ODIwMywiaXNzIjoiaHR0cDovL2Z1c2lvbkF1dGg6OTAxMSIsInN1YiI6IjY2ZGIzNjVmLTRmOTMtNGEyNi1hNDNhLWJmOThlOTJmNzgwMyIsImp0aSI6IjAzNjk4MjgzLWNmZTUtNGQxZi04NDVmLTM4Y2VhMjVmOTVjYSIsImF1dGhlbnRpY2F0aW9uVHlwZSI6IlBBU1NXT1JEIiwiZW1haWwiOiJzdGV2ZWRvb2Q3NkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImFwcGxpY2F0aW9uSWQiOiI4ODUxZTRiMC0wZGQwLTQ0NzUtODZhMy00NDQ5ZWJiMzU2NzgiLCJyb2xlcyI6WyJzdXBlcl9hZG1pbiJdLCJhdXRoX3RpbWUiOjE2OTQ2NzgyMDMsInRpZCI6IjMxM2RjZmVkLTcwZjUtNWIxNS1iYzZkLTJkMTU4NDI4NDUzMSJ9.bbk50OOZbGmLuGw693P66bc1G-FAZse_1IUgmHJ1Gse8jvx2YMtxNmFIser-sOAqEMxvL9cAMwRwuahEyVk3qVqW-xFbqwNsbT4iMyH2t4GuLMR01_3_t_HBNYa6812S2dHlu2iGNzqx15L7l9pOyWQ69bh5u3MgflPcFJOuASpqF6HYa6UTTeWHkLSrT7ojCJSz123tFk85nMst8ZozWliuC6DoOPOtiUL2ILIRe6S-UmX0FWdV1FwiKhG_T5YT_FHNQM23sqjEBZOmfQKJG4bb8kEweOloW7XjNJzk1BkO2kJ5iPvswlA1KW_YOVDmh7dvnLzz6VoR5h0ges3gEg"}
+                    {Authorization: "Bearer "}
             })
             if (response.data.statusCode === 200) {
                 successAudioRef.current.play();
